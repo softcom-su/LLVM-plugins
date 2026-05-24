@@ -1,6 +1,8 @@
 add_library(Dispatcher STATIC
     MinimalTDispatcher.cpp
     TrivialDispatcher.cpp
+    KlimovShamirDispatcher.cpp
+    EncryptedTableDispatcher.cpp
 )
 
 set_target_properties(Dispatcher PROPERTIES POSITION_INDEPENDENT_CODE ON)
