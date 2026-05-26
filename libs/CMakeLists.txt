@@ -1,1 +1,2 @@
+add_subdirectory(CFG)
 add_subdirectory(Dispatcher)

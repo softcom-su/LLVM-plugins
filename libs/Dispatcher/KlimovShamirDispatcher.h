@@ -1,9 +1,9 @@
-#ifndef LLVM_TUTOR_MINIMAL_T_DISPATCHER_H
-#define LLVM_TUTOR_MINIMAL_T_DISPATCHER_H
+#ifndef LLVM_TUTOR_KLIMOV_SHAMIR_DISPATCHER_H
+#define LLVM_TUTOR_KLIMOV_SHAMIR_DISPATCHER_H
 
 #include "Dispatcher.h"
 
-struct MinimalTDispatcher : Dispatcher {
+struct KlimovShamirDispatcher : Dispatcher {
     std::unique_ptr<DispatcherContext> createContext() override;
 
     void initializeContext(

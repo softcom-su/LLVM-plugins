@@ -4,18 +4,22 @@
 #include "Dispatcher.h"
 
 struct TrivialDispatcher : Dispatcher {
-  llvm::Value *computeIndex(
-      llvm::IRBuilder<> &B,
-      DispatcherContext &ctx) override;
+    std::unique_ptr<DispatcherContext> createContext() override;
 
-  void updateState(
-      llvm::IRBuilder<> &B,
-      DispatcherContext &ctx,
-      unsigned blockIncrementIndex) override;
+    void initializeContext(
+        DispatcherContext &ctx,
+        llvm::Function *F,
+        const std::vector<llvm::BasicBlock *> &BBs) override;
 
-  unsigned requiredStates() const override {
-    return 1;
-  }
+    llvm::Value *computeIndex(
+        llvm::IRBuilder<> &B,
+        DispatcherContext &ctx) override;
+
+    void updateState(
+        llvm::IRBuilder<> &B,
+        DispatcherContext &ctx,
+        unsigned targetState,
+        int sourceState = -1) override;   // source unused for trivial
 };
 
 #endif

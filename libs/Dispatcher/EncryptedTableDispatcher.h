@@ -1,9 +1,9 @@
-#ifndef LLVM_TUTOR_MINIMAL_T_DISPATCHER_H
-#define LLVM_TUTOR_MINIMAL_T_DISPATCHER_H
+#ifndef LLVM_TUTOR_ENCRYPTED_TABLE_DISPATCHER_H
+#define LLVM_TUTOR_ENCRYPTED_TABLE_DISPATCHER_H
 
 #include "Dispatcher.h"
 
-struct MinimalTDispatcher : Dispatcher {
+struct EncryptedTableDispatcher : Dispatcher {
     std::unique_ptr<DispatcherContext> createContext() override;
 
     void initializeContext(
